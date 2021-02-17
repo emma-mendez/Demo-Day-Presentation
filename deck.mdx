@@ -1,0 +1,227 @@
+import {
+  CodeSurfer,
+  CodeSurferColumns,
+  Step,
+} from "code-surfer";
+import { github, nightOwl } from "@code-surfer/themes";
+
+export const theme = nightOwl;
+
+# Emma Mendez
+### 'Full Stack Developer'  👋
+
+Presenting my [Voice Training App](https://acs-vocal-training.vercel.app/) 
+and [GitHub](https://github.com/emma-mendez)
+
+---
+
+<CodeSurfer>
+
+```js title="Open source React code by Elizabet Oliveira " subtitle="Using p5.js sound libraries"
+import p5 from "p5";
+import "p5/lib/addons/p5.sound"; 
+
+export default function sketch(p) {
+  let mic;
+  let vizColor = "";
+
+  p.setup = function() {
+    p.createCanvas(p.windowWidth + 20, 500);
+    this.mic = new p5.AudioIn();
+
+    // Create an Audio input
+    mic = new p5.AudioIn();
+
+    // start the Audio Input.
+    mic.start();
+  };
+
+```
+
+```js
+
+  p.windowResized = () => {
+    p.resizeCanvas(p.windowWidth, 500);
+  };
+
+  p.myCustomRedrawAccordingToNewPropsHandler = function(props) {
+    if (props.vizColor) {
+      vizColor = props.vizColor;
+    }
+  };
+
+  p.draw = function() {
+    var yoff = 0.0;
+    // Get the overall volume (between 0 and 1.0)
+    var vol = mic.getLevel();
+
+    p.background(255, 255, 255);
+    p.stroke(vizColor);
+    p.fill(vizColor);
+
+```
+```js
+    // We are going to draw a polygon out of the wave points
+    p.beginShape();
+
+    var xoff = 0; // Option #1: 2D Noise
+
+    // Iterate over horizontal pixels
+    for (var x = 0; x <= p.windowWidth; x += 10) {
+      // Calculate a y value according to noise, map to
+
+      //map(value,start1,stop1,start2,stop2)
+      var y = p.map(p.noise(xoff, yoff), 0, 1, 200, 300);
+
+      // Set the vertex
+      p.vertex(x, y);
+      // Increment x dimension for noise
+      xoff += vol;
+    }
+    // increment y dimension for noise
+    yoff += vol;
+    p.vertex(p.windowWidth, p.windowHeight);
+    p.vertex(0, p.windowHeight);
+    p.endShape(p.CLOSE);
+  };
+
+  p.touchStarted = function() {
+    if (mic.mediaStream.context.state !== "running") {
+      mic.mediaStream.context.resume();
+    }
+  };
+}
+```
+```diff 1[10:1],2[10:2],3[10:3],20:30
+
+```
+
+</CodeSurfer>
+
+---
+
+<CodeSurferColumns themes={[nightOwl, github]}>
+
+<Step>
+
+```js
+const magna = aliqua => aliqua.ut((enim, ad) => enim, 0);
+```
+
+```js
+const minim = (ad, enim) => dolore.magna(ad / enim);
+```
+
+</Step>
+
+<Step>
+
+```js
+import React, { useState } from "react";
+import UploadService from "../services/upload-files.service";
+
+
+const FourTrackStudioRecorder = () => {
+    const [
+      progress, setProgress
+    ] = useState( 0 );
+
+    const [
+      currentFile, setCurrentFile
+    ] = useState( null );
+
+    const [
+      selectedFiles, setSelectedFiles
+    ] = useState( [] );
+
+
+      return (
+        <div>
+          <div className="row">
+            <div className="col-8">
+              <label className="btn btn-default p-0">
+                <input type="file" accept="audio/*" onChange={selectFile} />
+              </label>
+            </div>
+            <div className="col-4">
+              <button
+                className="btn btn-success btn-sm"
+                disabled={!currentFile}
+                onClick={upload}
+              >
+                Upload
+              </button>
+            </div>
+          </div>
+          {message && (
+            <div className="alert alert-secondary mt-3" role="alert">
+              {message}
+            </div> 
+        )
+      }
+  
+     
+  
+
+  export default FourTrackStudioRecorder
+```
+
+```js
+import React, { Component } from 'react';
+import Dialog from '@material-ui/core/Dialog';
+import AppBar from '@material-ui/core/AppBar';
+import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
+import Box from '@material-ui/core/Box';
+import { Link } from 'react-router-dom';
+
+export class Success extends Component {
+  continue = e => {
+    e.preventDefault();
+    // PROCESS FORM //
+    this.props.nextStep();
+  };
+
+  back = e => {
+    e.preventDefault();
+    this.props.prevStep();
+  };
+
+  home = e => {
+    this.props.home();
+  }
+
+  render() {
+    return (
+      <MuiThemeProvider>
+        <>
+          <Dialog
+            open
+            fullWidth
+            maxWidth='sm'
+          >
+            <AppBar title="Success" />
+            <Box p={5} bgcolor="background.paper" >
+            <h1>Thank You For Your Submission</h1>
+            <button class="buttonf">
+            <Link to="/7Ygihbjnkbdafhisyf78re7t94ythiy5eht5io4y875erfygaikhbjadvchbdsvkdflmblgflg;knbjdhfgfiruv">Home</Link> 
+            </button>
+            </Box>
+          </Dialog>
+        </>
+      </MuiThemeProvider>
+    );
+  }
+}
+
+export default Success;
+
+```
+
+</Step>
+
+</CodeSurferColumns>
+
+---
+
+Please Follow Me: @black_codher_emmamendez : 
+[any1cansing.com](https://any1cansing.com/app)
