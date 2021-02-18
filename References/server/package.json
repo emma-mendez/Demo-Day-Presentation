@@ -1,0 +1,48 @@
+{
+  "name": "firstserver",
+  "version": "1.0.0",
+  "engines": {
+    "node": "14.x"
+  },
+  "main": "index.ejs",
+  "scripts": {
+    "devStart": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "author": "Emma Mendez",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "cors": "^2.8.5",
+    "dcrypt": "^0.0.2",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "express-flash": "^0.0.2",
+    "express-session": "^1.17.1",
+    "method-override": "^3.0.0",
+    "mongodb": "^3.6.3",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "realm": "^10.1.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iesea/server.git"
+  },
+  "bugs": {
+    "url": "https://github.com/iesea/server/issues"
+  },
+  "homepage": "https://github.com/iesea/server#readme",
+  "description": "Vocal App",
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "nodemon": "^2.0.6"
+  },
+  "keywords": [
+    "singing",
+    "learn",
+    "vocals",
+    "studio",
+    "recording"
+  ]
+}
