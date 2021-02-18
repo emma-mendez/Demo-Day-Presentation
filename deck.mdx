@@ -160,7 +160,7 @@ With TECHNOLOGY
 
 <CodeSurfer>
 
-```js title="The Server"
+```js title="The BACKEND Server"
 if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config()
 }
@@ -182,7 +182,7 @@ app.use(express.json())
 
 ```
 
-```js
+```js title="The BACKEND Server"
 
   app.post('/login', (req, res) => {
     client.connect(async ( )=> {
@@ -203,7 +203,7 @@ app.use(express.json())
         }
 
 ```
-```js
+```js title="The FRONTEND"
     if (json.message === 'user exists!') {
     window.alert( "Welcome To ACS Vocal App. Accessing Servers ..." )
     redirect()
@@ -265,7 +265,7 @@ function RegistrationForm({ handleClose }) {
 
 <Step>
 
-```js
+```js title="REACT HOOKS"
 import React, { useState } from "react";
 import UploadService from "../services/upload-files.service";
 
@@ -315,7 +315,7 @@ const FourTrackStudioRecorder = () => {
   export default FourTrackStudioRecorder
 ```
 
-```js
+```js title="WAYS TO EXIT/CLOSE "
 
 1. 
 
